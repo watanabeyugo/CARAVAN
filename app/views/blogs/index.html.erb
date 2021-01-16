@@ -6,6 +6,7 @@
     </a>
   </h1>
   <div class="social">
+    <!-- 追記 -->
     <i class="fab fa-facebook-square"></i>
     <i class="fab fa-twitter-square"></i>
     <i class="fab fa-instagram"></i>
@@ -13,15 +14,18 @@
 </header>
 <nav>
   <ul class="nav-list">
-    <li class="nav-list-item">Home</li>
+    <li class="nav-list-item">
+      <a href="index.html">Home</a>
+    </li>
     <li class="nav-list-item">About</li>
     <li class="nav-list-item">Topic</li>
   </ul>
 </nav>
-
+  
 <!-- main-visual用のdiv -->
 <div class="main-visual">
   <div class="main-visual-content">
+    <!-- pタグ（と文字）を追加 -->
     <p class="main-visual-text">
       The world is a book<br />
       and those who do not travel<br />
@@ -32,24 +36,23 @@
     </p>
   </div>
 </div>
-
-<!-- main -->
+  
+<!-- main用のdiv -->
 <main>
   <section class="blog">
     <h2 class="blog-heading">Recent Blogs</h2>
     <div class="blog-box">
-      
       <% @blogs.each do |blog| %>
-        <div class="blog-item">
+        <div class="blog-item clearfix">
           <div class="blog-image"><%= image_tag('img/forest.jpg',  class: 'blog-image') %></div>
           <section class="blog-text">
-            <h3 class="blog-text-heading"><%= link_to blog.title, blog_path(blog) %></h3>
+            <h3 class="blog-text-headline"><%= link_to blog.title, blog_path(blog) %></h3>
             <p class="blog-date"><%= blog.created_at %></p>
             <span class="category"><%= blog.category %></span>
           </section>
         </div>
       <% end %>
-      
+    </div>
     <div class="pagination">
       <p><<</p>
       <p><</p>
@@ -60,8 +63,6 @@
       <p>>></p>
     </div>
   </section>
-
-  <!-- sidebar -->
   <div class="sidebar">
     <section class="popular">
       <h2 class="sidebar-heading common-heading">Popular</h2>
@@ -108,7 +109,7 @@
     </section>
   </div>
 </main>
-
+  
 <!-- footer -->
 <footer>
   <p class="footer-text">© All rights reserved by Infratop.Inc.</p>
